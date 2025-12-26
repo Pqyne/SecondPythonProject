@@ -3,13 +3,17 @@ def add_info(name,phone):
   my_contacts[name] = phone
   print(f"Contact has been updated!")
 def show_info():
-    if not my_contacts:
+    if name not in my_contacts:
         print("your list is empty!")
     else:
         for key, value in my_contacts.items():
             print(f"Your Contacts is ")
             print(f" Name :{key} | Phone: {value}")
             print(f" ------------------------\n")
+def search_contacts():
+  name = input("write a name to search")
+  if name in my_contacts:
+    print(f"heres your search resluts: {name} ==> {my_contacts[name]}")
 def main():
     print("Welcome, what do you want to do? \n")
     Is_running = True
@@ -41,6 +45,9 @@ def main():
             add_info(user_name, user_phone)
         if user_input.lower() == "show":
             show_info()
+        elif user_input == "search":
+            
+            search_contacts()
             
 
 
